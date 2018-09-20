@@ -1,15 +1,35 @@
 package each.reabfacil.model
 
+import javax.persistence.Column
+import javax.persistence.Table
+
+@Table(name = "UNIDADE")
 data class Unidade(
+        @Column(name= "ID_UNIDADE")
         val id: Long,
+
         //TODO RELACIONAMENTO CLINICA
         val clinica: Clinica,
-        val rua: String,
+
+        @Column(name= "ENDERECO")
+        val endereco: String,
+
+        @Column(name= "NOME")
         val nome: String,
+
+        @Column(name= "GENERO")
         val genero: Genero,
+
+        @Column(name= "CNPJ")
         val cnpj: String,
+
+        @Column(name= "CEP")
         val cep: String,
-        val uf: String,
+
+        @Column(name= "ESTADO")
+        val estado: String,
+
+        @Column(name= "CIDADE")
         val cidade: String
 )
 
