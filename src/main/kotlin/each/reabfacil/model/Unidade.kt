@@ -1,35 +1,52 @@
 package each.reabfacil.model
 
 import javax.persistence.Column
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
+import javax.persistence.JoinColumn
+import javax.persistence.ManyToOne
+import javax.persistence.OneToMany
 import javax.persistence.Table
 
+@Entity
 @Table(name = "UNIDADE")
 data class Unidade(
-        @Column(name= "ID_UNIDADE")
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Column(name = "ID_UNIDADE")
         val id: Long,
 
-        //TODO RELACIONAMENTO CLINICA
+        @ManyToOne
+        @JoinColumn(name = "ID_CLINICA")
         val clinica: Clinica,
 
-        @Column(name= "ENDERECO")
+        @OneToMany(mappedBy = "unidade")
+        val telefones: List<Telefone>,
+
+        @OneToMany(mappedBy = "unidade")
+        val avaliacoes: List<Avaliacao>,
+
+        @Column(name = "ENDERECO")
         val endereco: String,
 
-        @Column(name= "NOME")
+        @Column(name = "NOME")
         val nome: String,
 
-        @Column(name= "GENERO")
+        @Column(name = "GENERO")
         val genero: Genero,
 
-        @Column(name= "CNPJ")
+        @Column(name = "CNPJ")
         val cnpj: String,
 
-        @Column(name= "CEP")
+        @Column(name = "CEP")
         val cep: String,
 
-        @Column(name= "ESTADO")
+        @Column(name = "ESTADO")
         val estado: String,
 
-        @Column(name= "CIDADE")
+        @Column(name = "CIDADE")
         val cidade: String
 )
 
