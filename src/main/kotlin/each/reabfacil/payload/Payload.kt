@@ -13,9 +13,27 @@ data class UnidadePayload(
 
         val endereco: String,
         val estado: String,
-        val cidade: String
+        val cidade: String,
+        val genero: Genero
 
 )
+
+enum class Genero(val genero: String) {
+    HOMEM("M"),
+    MULHER("F"),
+    AMBOS("MF");
+
+    companion object {
+        fun fromCode(code: String) : Genero{
+            return when(code) {
+                "M" -> HOMEM
+                "F" -> MULHER
+                "MF" -> AMBOS
+                else -> throw RuntimeException("No genre found for code $code")
+            }
+        }
+    }
+}
 
 data class TratamentoPayload(
         val nome: String

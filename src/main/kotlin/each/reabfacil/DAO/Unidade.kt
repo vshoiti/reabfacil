@@ -58,6 +58,7 @@ data class Unidade(
                 avaliacoes.map { it.toPayload() },
                 endereco,
                 estado,
-                cidade)
+                cidade,
+                genero)
     }
 }

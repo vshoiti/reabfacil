@@ -17,9 +17,10 @@ class FakeController(val repository: UnidadeRepository,
     fun listaUnidades(
             @RequestParam(value = "estado", required = false) estado: String?,
             @RequestParam(value = "cidade", required = false) cidade: String?,
-            @RequestParam(value = "atendimento", required = false) atendimento: String?
+            @RequestParam(value = "atendimento", required = false) atendimento: String?,
+            @RequestParam(value = "genero", required = false) genero: String?
     ): List<UnidadePayload> {
 
-        return service.searchBy(cidade, estado, atendimento)
+        return service.searchBy(cidade, estado, atendimento, genero)
     }
 }
