@@ -37,20 +37,17 @@ window.onload = function() {
                         infoWindow.open(map);
                     }
                     
-        function inicializaDropdown(){           
-        let dropdown = document.getElementById("dropdown");
+    function inicializaDropdown(){
+        const url = 'http://localhost:8080/api/tratamento';
 
-        dropdown.empty();
-
-        dropdown.append('<option selected="true" disabled>Escolha uma opção</option>');
-        dropdown.prop('selectedIndex', 0);
-
-        const url = 'http://localhost:8080/api/tratamentos';
-
-        // Populate dropdown with list of provinces
         $.getJSON(url, function (data) {
-          $.each(data, function (key, entry) {
-            dropdown.append($('<option></option>').attr('value', entry.abbreviation).text(entry.name));
-          })
+           console.log(data)
+           $.each(data, function (index, tratamento) {
+                console.log(tratamento.nome);
+                $('#dropdown').append(
+                     $('<option></option>').val(tratamento.id).html(tratamento.nome)
+                 );
+           });
         });
+        $('.selectpicker').selectpicker('refresh');
     }
