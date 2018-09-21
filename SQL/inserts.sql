@@ -10,21 +10,21 @@ INSERT INTO CLINICA VALUES (6, 'Grupo Recuperar','https://www.gruporecuperar.com
 
 
 -- INSERT UNIDADE
-INSERT INTO UNIDADE VALUES(1,1,'Osasco','','','SP','Osasco','Rua Eloy Candido Lopes, 137 - Centro','06010130');
-INSERT INTO UNIDADE VALUES(2,1,'Presidente Altino','','','SP','Osasco','Rua Erasmo Braga - Pres. Altino','06213008');
-INSERT INTO UNIDADE VALUES(3,1,'Butantã','','','SP','São Paulo','Rodovia Raposo Tavares, 5573 - Butantã','05573900');
-INSERT INTO UNIDADE VALUES(4,2,'Jabaquara','','','SP','São Paulo','R. Ten. Alcídes Machado','04349100');
-INSERT INTO UNIDADE VALUES(5,2,'Cotia','M','','SP','Cotia','R. Fênix, 358-508 - Chácara Rincão','06721435');
-INSERT INTO UNIDADE VALUES(6,3,'Barueri','','','SP','Barueri','Rua Werner Goldberg, 179 - 83 A - Jardim Esperanca','06414025');
-INSERT INTO UNIDADE VALUES(7,3,'Alto de Pinheiros','F','','SP','São Paulo','Av. São Gualter - Alto de Pinheiros','03178200');
-INSERT INTO UNIDADE VALUES(8,3,'Pinheiros','','','SP','São Paulo','Av. das Nações Unidas, 145 - Pinheiros','03178200');
-INSERT INTO UNIDADE VALUES(9,3,'Itapecerica da Serra','','','SP','Itapecerica da Serra','Av. dos Itapecericanos - Parque Paraiso','06850135');
-INSERT INTO UNIDADE VALUES(10,4,'Cajamar','M','','SP','Cajamar','R. Pedra Bela - Ponunduva','07750000');
-INSERT INTO UNIDADE VALUES(11,5,'Osasco','','','SP','Osasco','Rua Cisne - Aliança','06236730');
-INSERT INTO UNIDADE VALUES(12,5,'Higienópolis','','','SP','São Paulo','R. Pernambuco, 109 - 101 - Higienópolis','01240020');
-INSERT INTO UNIDADE VALUES(13,6,'Cotia','M','','SP','Cotia','R. Gerônimo de Albuquerque, 534 - Jardim Japao (Caucaia do Alto)','06726120');
-INSERT INTO UNIDADE VALUES(14,6,'Vila Mariana','','','SP','São Paulo','R. Cubatão, 674 - Vila Mariana','04013003');
-INSERT INTO UNIDADE VALUES(15,6,'Morumbi','','','SP','São Paulo','R. nicolla rollo , 23 - apt. 63A - Morumbi','05726140');
+INSERT INTO UNIDADE VALUES(1,1,'Osasco','','','SP','Osasco','Rua Eloy Candido Lopes, 137 - Centro','06010-130');
+INSERT INTO UNIDADE VALUES(2,1,'Presidente Altino','','','SP','Osasco','Rua Erasmo Braga - Pres. Altino','06213-008');
+INSERT INTO UNIDADE VALUES(3,1,'Butantã','','','SP','São Paulo','Rodovia Raposo Tavares, 5573 - Butantã','05573-900');
+INSERT INTO UNIDADE VALUES(4,2,'Jabaquara','','','SP','São Paulo','R. Ten. Alcídes Machado','04349-100');
+INSERT INTO UNIDADE VALUES(5,2,'Cotia','M','','SP','Cotia','R. Fênix, 358-508 - Chácara Rincão','06721-435');
+INSERT INTO UNIDADE VALUES(6,3,'Barueri','','','SP','Barueri','Rua Werner Goldberg, 179 - 83 A - Jardim Esperanca','06414-025');
+INSERT INTO UNIDADE VALUES(7,3,'Alto de Pinheiros','F','','SP','São Paulo','Av. São Gualter - Alto de Pinheiros','03178-200');
+INSERT INTO UNIDADE VALUES(8,3,'Pinheiros','','','SP','São Paulo','Av. das Nações Unidas, 145 - Pinheiros','03178-200');
+INSERT INTO UNIDADE VALUES(9,3,'Itapecerica da Serra','','','SP','Itapecerica da Serra','Av. dos Itapecericanos - Parque Paraiso','06850-135');
+INSERT INTO UNIDADE VALUES(10,4,'Cajamar','M','','SP','Cajamar','R. Pedra Bela - Ponunduva','07750-000');
+INSERT INTO UNIDADE VALUES(11,5,'Osasco','','','SP','Osasco','Rua Cisne - Aliança','06236-730');
+INSERT INTO UNIDADE VALUES(12,5,'Higienópolis','','','SP','São Paulo','R. Pernambuco, 109 - 101 - Higienópolis','01240-020');
+INSERT INTO UNIDADE VALUES(13,6,'Cotia','M','','SP','Cotia','R. Gerônimo de Albuquerque, 534 - Jardim Japao (Caucaia do Alto)','06726-120');
+INSERT INTO UNIDADE VALUES(14,6,'Vila Mariana','','','SP','São Paulo','R. Cubatão, 674 - Vila Mariana','04013-003');
+INSERT INTO UNIDADE VALUES(15,6,'Morumbi','','','SP','São Paulo','R. nicolla rollo , 23 - apt. 63A - Morumbi','05726-140');
 
 -- INSERT TRATAMENTO
 INSERT INTO TRATAMENTO VALUES (1, 'Alcool');
