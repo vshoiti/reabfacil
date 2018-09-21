@@ -16,6 +16,6 @@ data class Tratamento(
         val nome: String = ""
 ) {
         fun toPayload() : TratamentoPayload {
-                return TratamentoPayload(nome)
+                return TratamentoPayload(id!!, nome)
         }
 }

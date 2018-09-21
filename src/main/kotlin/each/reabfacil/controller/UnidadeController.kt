@@ -1,7 +1,6 @@
 package each.reabfacil.controller
 
 import each.reabfacil.payload.UnidadePayload
-import each.reabfacil.repository.UnidadeRepository
 import each.reabfacil.service.UnidadeService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api")
-class FakeController(val service: UnidadeService) {
+class UnidadeController(val service: UnidadeService) {
 
     @GetMapping("/unidade")
     fun listaUnidades(

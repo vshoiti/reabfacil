@@ -21,7 +21,8 @@ data class UnidadePayload(
 enum class Genero(val genero: String) {
     HOMEM("M"),
     MULHER("F"),
-    AMBOS("MF");
+    AMBOS("MF"),
+    NAO_INFORMADO("");
 
     companion object {
         fun fromCode(code: String): Genero {
@@ -29,13 +30,14 @@ enum class Genero(val genero: String) {
                 "M" -> HOMEM
                 "F" -> MULHER
                 "MF" -> AMBOS
-                else -> throw RuntimeException("No genre found for code $code")
+                else -> NAO_INFORMADO
             }
         }
     }
 }
 
 data class TratamentoPayload(
+        val id: Long,
         val nome: String
 )
 
