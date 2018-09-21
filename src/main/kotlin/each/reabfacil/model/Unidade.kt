@@ -1,5 +1,6 @@
-package each.reabfacil.DAO
+package each.reabfacil.model
 
+import each.reabfacil.payload.Genero
 import each.reabfacil.payload.UnidadePayload
 import javax.persistence.*
 
@@ -59,6 +60,6 @@ data class Unidade(
                 endereco,
                 estado,
                 cidade,
-                genero)
+                Genero.fromCode(genero))
     }
 }

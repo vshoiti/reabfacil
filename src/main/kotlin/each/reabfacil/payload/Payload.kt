@@ -24,8 +24,8 @@ enum class Genero(val genero: String) {
     AMBOS("MF");
 
     companion object {
-        fun fromCode(code: String) : Genero{
-            return when(code) {
+        fun fromCode(code: String): Genero {
+            return when (code) {
                 "M" -> HOMEM
                 "F" -> MULHER
                 "MF" -> AMBOS
@@ -45,7 +45,7 @@ data class TelefonePayload(
 
 data class ClinicaPayload(
         val nome: String,
-        val unidades : List<UnidadePayload>,
+        val unidades: List<UnidadePayload>,
         val link: String
 )
 

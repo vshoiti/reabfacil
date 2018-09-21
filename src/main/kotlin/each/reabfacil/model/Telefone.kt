@@ -1,4 +1,4 @@
-package each.reabfacil.DAO
+package each.reabfacil.model
 
 import each.reabfacil.payload.TelefonePayload
 import javax.persistence.Column

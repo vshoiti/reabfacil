@@ -1,6 +1,5 @@
-package each.reabfacil.DAO
+package each.reabfacil.model
 
-import com.fasterxml.jackson.annotation.JsonProperty
 import each.reabfacil.payload.AvaliacaoPayload
 import javax.persistence.Column
 import javax.persistence.Entity

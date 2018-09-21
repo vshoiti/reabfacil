@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api")
-class FakeController(val repository: UnidadeRepository,
-                     val service: UnidadeService) {
+class FakeController(val service: UnidadeService) {
 
     @GetMapping("/unidade")
     fun listaUnidades(

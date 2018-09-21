@@ -1,11 +1,11 @@
 package each.reabfacil.repository
 
-import each.reabfacil.DAO.Clinica
-import each.reabfacil.DAO.Unidade
+import each.reabfacil.model.Unidade
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.CrudRepository
+import org.springframework.stereotype.Repository
 
-@org.springframework.stereotype.Repository
+@Repository
 interface UnidadeRepository : CrudRepository<Unidade, Long> {
     fun findByCidade(cidade: String): List<Unidade>
 

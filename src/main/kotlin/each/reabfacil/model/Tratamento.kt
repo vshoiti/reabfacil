@@ -1,4 +1,4 @@
-package each.reabfacil.DAO
+package each.reabfacil.model
 
 import each.reabfacil.payload.TratamentoPayload
 import javax.persistence.*

@@ -3,7 +3,9 @@ package each.reabfacil.service
 import each.reabfacil.payload.Genero
 import each.reabfacil.payload.UnidadePayload
 import each.reabfacil.repository.UnidadeRepository
+import org.springframework.stereotype.Service
 
+@Service
 class UnidadeService(val repository: UnidadeRepository) {
     fun searchBy(cidade: String?, estado: String?, atendimento: String?, genero: String?) : List<UnidadePayload> {
         val all = repository.findAll().toList()
