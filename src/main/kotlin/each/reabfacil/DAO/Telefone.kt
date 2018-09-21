@@ -1,5 +1,6 @@
-package each.reabfacil.model
+package each.reabfacil.DAO
 
+import each.reabfacil.payload.TelefonePayload
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -10,23 +11,21 @@ import javax.persistence.ManyToOne
 import javax.persistence.Table
 
 @Entity
-@Table(name = "AVALIACAO")
-data class Avaliacao(
+@Table(name = "TELEFONE")
+data class Telefone(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column(name= "ID_AVALIACAO")
-        val id: Long,
+        @Column(name= "ID_TELEFONE")
+        val id: Long? = null,
 
         @ManyToOne
         @JoinColumn(name = "ID_UNIDADE")
-        val unidade: Unidade,
+        val unidade: Unidade? = null,
 
-        @Column(name= "COMENTARIO")
-        val comentario: String?,
-
-        @Column(name= "NOTA")
-        val nota: Int,
-
-        @Column(name= "USUARIO")
-        val foiUsuario: Boolean
-)
+        @Column(name= "TELEFONE")
+        val numero: String = ""
+) {
+        fun toPayload() : TelefonePayload {
+                return TelefonePayload(numero)
+        }
+}
