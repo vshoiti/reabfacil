@@ -5,15 +5,17 @@
  */
 
 header {
-  padding: 154px 0 100px;
+  padding: 77px 0 50px;
+  zoom: 1.5;
 }
 
 @media (min-width: 992px) {
   header {
-    padding: 156px 0 100px;
+    padding: 78px 0 50px;
   }
 }
 
 section {
-  padding: 150px 0;
+  padding: 25px 0;
+  zoom: 1.5;
 }
