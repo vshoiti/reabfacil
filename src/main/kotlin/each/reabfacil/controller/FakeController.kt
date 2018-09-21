@@ -20,10 +20,6 @@ class FakeController(val repository: UnidadeRepository,
             @RequestParam(value = "atendimento", required = false) atendimento: String?
     ): List<UnidadePayload> {
 
-       return service.searchBy(cidade, estado, atendimento)
+        return service.searchBy(cidade, estado, atendimento)
+    }
 }
-
-data class FakeClinica(
-        val nome: String,
-        val telefone: String
-)
