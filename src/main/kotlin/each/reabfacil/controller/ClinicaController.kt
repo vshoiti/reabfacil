@@ -1,17 +1,18 @@
 package each.reabfacil.controller
 
+import each.reabfacil.payload.ClinicaPayload
 import each.reabfacil.payload.TratamentoPayload
-import each.reabfacil.repository.TratamentoRepository
+import each.reabfacil.repository.ClinicaRepository
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api")
-class TratamentoController(val repository: TratamentoRepository) {
+class ClinicaController(val repository: ClinicaRepository) {
 
-    @GetMapping("/tratamento")
-    fun listaTodos(): List<TratamentoPayload> {
+    @GetMapping("/clinica")
+    fun listaTodos(): List<ClinicaPayload> {
         return repository.findAll().map { it.toPayload() }
     }
 }
