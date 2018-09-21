@@ -2,6 +2,7 @@ package each.reabfacil.controller
 
 import each.reabfacil.payload.UnidadePayload
 import each.reabfacil.repository.UnidadeRepository
+import each.reabfacil.service.UnidadeService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
@@ -9,39 +10,17 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api")
-class FakeController(val repository: UnidadeRepository) {
-
-    @GetMapping("/clinicas")
-    fun listaClinicas(@RequestParam("estado") estado: String): List<FakeClinica> {
-        return listOf(FakeClinica("clinica1", "1112345678"),
-                FakeClinica("clinica2", "1198765432"))
-    }
+class FakeController(val repository: UnidadeRepository,
+                     val service: UnidadeService) {
 
     @GetMapping("/unidade")
     fun listaUnidades(
             @RequestParam(value = "estado", required = false) estado: String?,
             @RequestParam(value = "cidade", required = false) cidade: String?,
-            @RequestParam(value = "atendimento", required = false) dependencia: String?
+            @RequestParam(value = "atendimento", required = false) atendimento: String?
     ): List<UnidadePayload> {
 
-        val all = repository.findAll().toList()
-        var result = all.map { it.toPayload() }
-
-        println(all.size)
-
-        if(!estado.isNullOrBlank()) {
-            result = result.filter { it.estado == estado }
-        }
-        if(!cidade.isNullOrBlank()) {
-            result = result.filter { it.cidade == cidade }
-        }
-        if(!dependencia.isNullOrBlank()) {
-            result = result.filter { it.tiposDeTratamentos.any { it.nome == dependencia } }
-        }
-        println(result.size)
-        return result
-    }
-
+       return service.searchBy(cidade, estado, atendimento)
 }
 
 data class FakeClinica(
