@@ -1,11 +1,9 @@
 package each.reabfacil.controller
 
+import each.reabfacil.model.Unidade
 import each.reabfacil.payload.UnidadePayload
 import each.reabfacil.service.UnidadeService
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api")
@@ -20,5 +18,10 @@ class UnidadeController(val service: UnidadeService) {
     ): List<UnidadePayload> {
 
         return service.searchBy(cidade, estado, atendimento, genero)
+    }
+
+    @GetMapping("/unidade/{id}")
+    fun pegaPorId(@PathVariable("id") id: Long) : Unidade {
+        return service.findById(id)
     }
 }

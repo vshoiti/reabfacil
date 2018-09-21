@@ -1,5 +1,7 @@
 package each.reabfacil.service
 
+import each.reabfacil.exception.NotFoundException
+import each.reabfacil.model.Unidade
 import each.reabfacil.payload.Genero
 import each.reabfacil.payload.UnidadePayload
 import each.reabfacil.repository.UnidadeRepository
@@ -27,6 +29,10 @@ class UnidadeService(val repository: UnidadeRepository) {
         }
         println(result.size)
         return result
+    }
+
+    fun findById(id: Long): Unidade {
+        return repository.findById(id).orElseThrow { NotFoundException("Unidade de ID $id não encontrada") }
     }
 
 }
