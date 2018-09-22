@@ -1,4 +1,5 @@
 var map, infoWindow;
+
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 14
@@ -33,6 +34,44 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
 }
+
+function reverseGeocode() {
+    var geocoder = new google.maps.Geocoder;
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+                lat: parseFloat(position.coords.latitude),
+                lng: parseFloat(position.coords.longitude)
+            }
+        geocoder.geocode({'location': pos}, function(results, status) {
+            if(status === 'OK') {
+                if (results[0]){
+                    results.forEach(function(element){
+                        element.address_components.forEach(function(element2){
+                            element2.types.forEach(function(element3){
+                                switch(element3){
+                                    case 'locality':
+                                        endereco = element2.long_name;
+                                        enviaLocalizacao(endereco);
+                                        break;
+                                }
+                            })
+                        });
+                    });
+                } else {
+                    alert('No results found');
+                }
+            }else {
+                alert('Geocoder failed due to: ' + status);
+            }
+        });
+        });
+    }
+}
+
+
+
+
 
 // No HTMl utilize o seguinte:
 // <div id="map" style="width:500px;height:250px"></div>

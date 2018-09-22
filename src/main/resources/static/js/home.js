@@ -1,6 +1,6 @@
 window.onload = function() {
   inicializaDropdown();
-}; 
+};
     function inicializaDropdown(){
         const url = 'http://localhost:8080/api/tratamento';
 
@@ -14,3 +14,18 @@ window.onload = function() {
            });
         });
     }
+
+
+function enviaLocalizacao(endereco){
+    var tratamento = $('#dropdown').find(":selected").text();
+
+    var stringParams = window.location.href;
+    var paramsBusca = new URLSearchParams(stringParams.search());
+
+    paramsBusca.append("cidade", endereco);
+    paramsBusca.append("tratamento", tratamento);
+
+    var novoLink = "clinicas.html" + "?" + paramsBusca.toString();
+    window.location.href =  novoLink;
+}
+

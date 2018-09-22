@@ -1,7 +1,10 @@
 window.onload = function() {
+    var paramsString = this.window.location.href;
+    var searchParams = new URLSearchParams(paramsString);
+
     var filtros = {
-        estado: "SP",
-        cidade: "São Paulo"
+        cidade: searchParams.get('cidade').toString() ,
+        tratamento: searchParams.get('tratamento').toString(),
     };
     inicializaLista(filtros);
 }; 
@@ -9,7 +12,7 @@ window.onload = function() {
 //Id do nome da clinica é seu id + nome.
 function inicializaLista(filtros) {
     const url = 'http://localhost:8080/api/unidade';
-
+    console.log(filtros);
     $.getJSON(url,filtros,function (data) {
         console.log(data)
         $.each(data, function (index, unidade) {
