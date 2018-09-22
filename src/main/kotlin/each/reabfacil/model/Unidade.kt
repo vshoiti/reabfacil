@@ -52,7 +52,9 @@ data class Unidade(
         val tiposDeTratamentos: Set<Tratamento> = setOf()
 ) {
     fun toPayload(): UnidadePayload {
-        return UnidadePayload(nome,
+        return UnidadePayload(id!!,
+                clinica!!.id!!,
+                nome,
                 tiposDeTratamentos.map { it.toPayload() },
                 telefones.map { it.toPayload() },
                 cnpj,

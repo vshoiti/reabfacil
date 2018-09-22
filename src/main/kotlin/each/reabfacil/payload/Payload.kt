@@ -1,6 +1,8 @@
 package each.reabfacil.payload
 
 data class UnidadePayload(
+        val id: Long,
+        val idClinica: Long,
         val nome: String,
 
         val tiposDeTratamentos: List<TratamentoPayload>,
@@ -46,12 +48,14 @@ data class TelefonePayload(
 )
 
 data class ClinicaPayload(
+        val id: Long,
         val nome: String,
         val unidades: List<UnidadePayload>,
         val link: String
 )
 
 data class AvaliacaoPayload(
+        val id: Long,
         val comentario: String?,
 
         val nota: Int,
