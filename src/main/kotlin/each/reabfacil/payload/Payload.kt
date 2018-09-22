@@ -5,7 +5,7 @@ data class UnidadePayload(
         val idClinica: Long,
         val nome: String,
 
-        val tiposDeTratamentos: List<TratamentoPayload>,
+        val tratamentos: List<TratamentoPayload>,
 
         val telefones: List<TelefonePayload>,
 
