@@ -21,7 +21,7 @@ class UnidadeController(val service: UnidadeService) {
     }
 
     @GetMapping("/unidade/{id}")
-    fun pegaPorId(@PathVariable("id") id: Long) : Unidade {
+    fun pegaPorId(@PathVariable("id") id: Long) : UnidadePayload {
         return service.findById(id)
     }
 }
