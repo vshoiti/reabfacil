@@ -1,12 +1,16 @@
 window.onload = function() {
-    inicializaLista();
+    var filtros = {
+        estado: "SP",
+        cidade: "São Paulo"
+    };
+    inicializaLista(filtros);
 }; 
 //Id do DIV onde a clinica fica é definido pelo seu ID
 //Id do nome da clinica é seu id + nome.
-function inicializaLista() {
+function inicializaLista(filtros) {
     const url = 'http://localhost:8080/api/unidade';
 
-    $.getJSON(url,function (data) {
+    $.getJSON(url,filtros,function (data) {
         console.log(data)
         $.each(data, function (index, unidade) {
             const urlClinica = 'http://localhost:8080/api/clinica/' + unidade.idClinica;
