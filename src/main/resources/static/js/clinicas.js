@@ -61,23 +61,3 @@ function listaClinica(urlClinica , unidade) {
         )
     })
 }
-
-function listaUnidade(unidade) {
-
-    console.log(unidade);
-    var idClinica = unidade.idClinica.toString();
-    var idUnidade = unidade.id.toString();
-
-    var teste = document.getElementById(idClinica);
-    console.log(teste);
-    //Pega div da clinica, e posta a unidade lá dentro
-    $('#' + idClinica).append(
-        $('<a></a>').addClass("list-group-item").attr('id', idUnidade).attr("href", "#")
-    ); //Criando DIV para Clinica.
-
-
-    //Criei o <a>, agora irei adicionar as informações dentro
-    $('#' + idUnidade).append(
-        $('<h4></h4>').html("Unidade " + unidade.nome)
-    ); //Criando DIV para Clinica.
-}
