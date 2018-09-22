@@ -21,6 +21,6 @@ data class Clinica(
         val unidades: List<Unidade> = listOf()
 ) {
         fun toPayload() : ClinicaPayload {
-                return ClinicaPayload(nome, unidades.map { it.toPayload() }, link)
+                return ClinicaPayload(id!!, nome, unidades.map { it.toPayload() }, link)
         }
 }

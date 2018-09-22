@@ -32,6 +32,6 @@ data class Avaliacao(
         val foiUsuario: Boolean? = null
 ) {
         fun toPayload() : AvaliacaoPayload {
-                return AvaliacaoPayload(comentario, nota!!, foiUsuario!!)
+                return AvaliacaoPayload(id!!, comentario, nota!!, foiUsuario!!)
         }
 }
