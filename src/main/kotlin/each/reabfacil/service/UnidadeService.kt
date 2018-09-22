@@ -31,8 +31,10 @@ class UnidadeService(val repository: UnidadeRepository) {
         return result
     }
 
-    fun findById(id: Long): Unidade {
-        return repository.findById(id).orElseThrow { NotFoundException("Unidade de ID $id não encontrada") }
+    fun findById(id: Long): UnidadePayload {
+        return repository.findById(id)
+                .orElseThrow { NotFoundException("Unidade de ID $id não encontrada") }
+                .toPayload()
     }
 
 }
