@@ -48,7 +48,7 @@ function listaClinica(urlClinica , unidade) {
 
         $('#'+idClinica).ready(
             $('#'+idClinica).append(
-            $('<a></a>').addClass("list-group-item").attr("href", "#").attr('id', (idClinica + idUni)).attr('value',idUni).attr('onClick', 'enviaParaDetalhamento(this)')
+            $('<a></a>').addClass("list-group-item").attr("href", "#").attr('id', (idClinica + idUni)).attr('value',idUni)
         ))
 
         //Adiciona nome unidade
@@ -63,11 +63,4 @@ function listaClinica(urlClinica , unidade) {
             )
         )
     })
-}
-
-function enviaParaDetalhamento(unidadeEscolhida) {
-    idUnidade = $(unidadeEscolhida).attr('value');
-    $(unidadeEscolhida).attr('href',"home.html");
-// var enviaParaDetalhamento = $("#" + (idClinica + idUni)).value;
-    //alert("Deu bom!!!" + este);
 }
