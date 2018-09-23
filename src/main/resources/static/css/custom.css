@@ -1,0 +1,39 @@
+
+.navbar-brand {
+  font-family: 'Dosis', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.5rem !important;
+}
+
+.bg-light {
+  background-color: #f1f1f1 !important;
+}
+
+.bg-primary {
+  background-color: #f1f1f1 !important;
+}
+
+.text-dark {
+  font-family: 'Dosis', sans-serif !important;
+  font-weight: 300 !important;
+  color: #000000 !important;
+}
+
+body {
+  font-family: 'Dosis', sans-serif !important;
+  color: #000000 !important;
+}
+
+.list-group-item {
+  color: #000000 !important;
+}
+
+.list-group-item:last-child {
+  margin-bottom: 25px;
+}
+
+.first-child {
+  margin-top: 10px;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}

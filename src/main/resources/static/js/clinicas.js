@@ -31,8 +31,9 @@ function listaClinica(urlClinica , unidade) {
         var idClinica = dataClinica.id.toString();
         var nomeClinica = dataClinica.nome.toString();
         var myElem = document.getElementById(idClinica);
+        let isFirst = myElem === null;
 
-        if (myElem === null){
+        if (isFirst){
             // Clinica Ainda não listada
             $('#listaClinicas').append(
                 $('<div></div>').attr('id',idClinica).addClass("list-group")
@@ -55,12 +56,18 @@ function listaClinica(urlClinica , unidade) {
 
         var idUnidade = "#" + (idClinica + idUni);
         $(idUnidade).ready($(idUnidade).append(
-            $('<h4></h4>').addClass("list-group-item-heading").html(unidade.nome)
+            $('<h4></h4>').addClass("list-group-item-heading pb-3 pt-2").html(unidade.nome)
             ),
             //Adiciona endereço unidade
             $(idUnidade).append(
-                $('<p></p>').addClass("list-group-item-text").html(unidade.endereco)
+                $('<p></p>').addClass("list-group-item-text m-1").html(unidade.endereco)
             )
         )
+
+        // Fixa o item como primeiro filho manualmente
+        if (isFirst) {
+            console.log("aaa")
+            $(idUnidade).addClass('first-child');
+        }
     })
 }
