@@ -44,6 +44,7 @@ function reverseGeocode() {
                 lng: parseFloat(position.coords.longitude)
             }
         geocoder.geocode({'location': pos}, function(results, status) {
+            console.log(pos);
             if(status === 'OK') {
                 if (results[0]){
                     results.forEach(function(element){

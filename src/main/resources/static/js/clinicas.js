@@ -45,19 +45,29 @@ function listaClinica(urlClinica , unidade) {
 
         }
 
+
         $('#'+idClinica).ready(
             $('#'+idClinica).append(
-            $('<a></a>').addClass("list-group-item").attr("href", "#").attr('id', idClinica + idUni)
+            $('<a></a>').addClass("list-group-item").attr("href", "#").attr('id', (idClinica + idUni)).attr('value',idUni).attr('onClick', 'enviaParaDetalhamento(this)')
         ))
 
         //Adiciona nome unidade
-        $('#' + (idClinica + idUni)).ready($('#' + (idClinica + idUni)).append(
+
+        var idUnidade = "#" + (idClinica + idUni);
+        $(idUnidade).ready($(idUnidade).append(
             $('<h4></h4>').addClass("list-group-item-heading").html(unidade.nome)
             ),
             //Adiciona endereço unidade
-            $('#' + (idClinica + idUni)).append(
+            $(idUnidade).append(
                 $('<p></p>').addClass("list-group-item-text").html(unidade.endereco)
             )
         )
     })
+}
+
+function enviaParaDetalhamento(unidadeEscolhida) {
+    idUnidade = $(unidadeEscolhida).attr('value');
+    $(unidadeEscolhida).attr('href',"home.html");
+// var enviaParaDetalhamento = $("#" + (idClinica + idUni)).value;
+    //alert("Deu bom!!!" + este);
 }
